@@ -14,6 +14,7 @@ docker ps
 sudo -i su
 
 #Install Docker Debian:
+
 #!/bin/bash
 echo "--------- 🟢 Start install docker -----------"
 apt-get remove docker docker-engine docker.io containerd runc
@@ -37,6 +38,7 @@ sudo -E docker compose up -d
 echo "--------- 🔴 Finish! Wait a few minutes and test in browser at url $EXTERNAL_IP for n8n UI -----------"
 
 #Install n8n no local ai Debian:
+
 #!/bin/bash
 echo "--------- 🟢 Start install docker -----------"
 apt-get remove docker docker-engine docker.io containerd runc
@@ -63,4 +65,4 @@ echo "--------- 🔴 Finish! Wait a few minutes and test in browser at url $EXTE
 ##Check https://github.com/Kohnnn/n8n_dockercompose
 
 
-Credit to: MIAI
+Credit to: MIAI, localai.io
