@@ -1,0 +1,27 @@
+CÀI ĐẶT N8N TRÊN PC VÀ TRUY CẬP TỪ XA THÔNG QUA NGROK
+
+
+Yêu cầu
+Đã cài đặt Docker Desktop
+(Nếu chưa cài, xem video AI Automation: cách cài đặt n8n trên máy PC nhanh nhất bạn cần biết)
+Đã cài đặt git (Nếu chưa cài, download và cài đặt tại https://git-scm.com/downloads)
+
+Các bước cài đặt trên Windows
+B1. Cài đặt choco (nếu đã cài thì bỏ qua bước này)
+Mở powershell quyền Admin, chạy lệnh sau:
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+B2. Cài đặt ngrok (nếu đã cài thì bỏ qua bước này)
+Đăng ký tài khoản và làm theo hướng dẫn của ngrok
+
+(Lưu ý: Tài khoản miễn phí được truy cập 20,000 request/tháng)
+Trường hợp bạn muốn ổn định, thì có thể đăng ký 1 domain giá rẻ .xyz (~2.8$/1 năm đầu), sau đó sử dụng Cloudflare Zero Trust để làm tunnel
+
+B3. Cài đặt n8n
+git clone https://github.com/tuyenhm68/self-hosted-ai-starter-kit
+cd self-hosted-ai-starter-kit
+docker compose --profile cpu up
+
+B4. Chạy ngrok
+ngrok http --url=http://”url”.app 5678 --host-header=rewrite
